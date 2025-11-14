@@ -1,0 +1,17 @@
+[
+  {
+    "key": "MSB-CLIENT-0001",
+    "active": true,
+    "note": "Cliente 1 de prueba"
+  },
+  {
+    "key": "MSB-CLIENT-0002",
+    "active": true,
+    "note": "Cliente 2 VIP"
+  },
+  {
+    "key": "MSB-REVOKED-0003",
+    "active": false,
+    "note": "Clave revocada de ejemplo"
+  }
+]
