@@ -1,17 +1,7 @@
 [
   {
-    "key": "MSB-CLIENT-0001",
+    "hash": "47f6a54ba21b5fdf8583c282f847a48cd46c1ceb7968c91cf794adb91b61c167",
     "active": true,
-    "note": "Cliente 1 de prueba"
-  },
-  {
-    "key": "MSB-CLIENT-0002",
-    "active": true,
-    "note": "Cliente 2 VIP"
-  },
-  {
-    "key": "MSB-REVOKED-0003",
-    "active": false,
-    "note": "Clave revocada de ejemplo"
+    "note": "Cliente 1"
   }
 ]
