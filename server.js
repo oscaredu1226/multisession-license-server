@@ -12,11 +12,14 @@ app.use(express.json());
 
 const licensesPath = path.join(__dirname, "licenses.json");
 
-// 🔐 Pepper fija (solo para LOCAL por ahora)
-// Cuando subas a Render, la cambiamos a process.env.LICENSE_PEPPER
-const LICENSE_PEPPER = "868ec7ded51c77775043ff4621531feb580026203784ac56b6b5f0d1fb9cfc0f";
+const LICENSE_PEPPER = process.env.LICENSE_PEPPER;
 
-// Función para convertir una key en hash
+if (!LICENSE_PEPPER) {
+    console.error("❌ LICENSE_PEPPER is not set. Define it as an environment variable.");
+    process.exit(1);
+}
+
+
 function hashKey(plainKey) {
     return crypto
         .createHash("sha256")
@@ -46,7 +49,6 @@ app.post("/auth/validate", (req, res) => {
 
     const licenses = loadLicenses();
 
-    // hasheamos la key que mandó el cliente
     const incomingHash = hashKey(key);
 
     const license = licenses.find((l) => l.hash === incomingHash);
